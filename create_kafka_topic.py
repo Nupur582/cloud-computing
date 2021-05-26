@@ -14,7 +14,7 @@ def assemble_url(base_url, stock, date, token):
 #This function assembles a URL to call the stock price API
      return base_url+stock+'/chart/date/'+date+'?token='+token
 
-date_minus_1 = datetime.today() - timedelta(days=1)
+date_minus_1 = datetime.today() - timedelta(days=2)
 date = date_minus_1.strftime('%Y%m%d')
 stock = 'AAPL'
 
