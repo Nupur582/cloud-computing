@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
 import requests
 from time import sleep
@@ -14,8 +14,8 @@ def assemble_url(base_url, stock, date, token):
 #This function assembles a URL to call the stock price API
      return base_url+stock+'/chart/date/'+date+'?token='+token
 
-
-date = datetime.today().strftime('%Y%m%d')
+date_minus_1 = datetime.today() - timedelta(days=1)
+date = date_minus_1.strftime('%Y%m%d')
 stock = 'AAPL'
 
 url = assemble_url(base_url, stock, date, token)
