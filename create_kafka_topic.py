@@ -20,7 +20,7 @@ stock = 'AAPL'
 
 url = assemble_url(base_url, stock, date, token)
 response = requests.get(url)
-print("########### STATUS CODE #############",response.status_code)
+print("########### DATE #############",date)
 data = json.loads(response.content.decode('utf-8'))
 
 producer = KafkaProducer(bootstrap_servers='172.25.0.12:9092',api_version=(0, 10, 1))
